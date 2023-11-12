@@ -237,12 +237,11 @@ Mᴏᴠɪᴇs Nᴏᴛ Aᴠᴀɪʟᴀʙʟᴇ Rᴇᴀsᴏɴ:
 
     
     IMDB_TEMPLATE_TXT = """
-<b>Query: {query}
 🏷 <b>Title: <a href={url}>{title}</a>
 ╭───────────────────
 ├ 🎭 <b>Genres:</b> {genres}
 ├ 📆 <b>Year:</b> <a href={url}/releaseinfo>{year}</a>
-├ 🌟 <b>Rating:</b> <a href={url}/ratings>{rating}</a> / 10 (Based on {votes} user ratings)
+├ 🌟 <b>Rating:</b> <a href={url}/ratings>{rating}</a> / 10 
 ├ 🎙️ <b>Lᴀɴɢᴜᴀɢᴇs:</b> <code>{languages}</code></a>
 ├ 📀 <b>Rᴜɴᴛɪᴍᴇ:</b> {runtime} Minutes</a>
 ├───────────────────
