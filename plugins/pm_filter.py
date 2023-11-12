@@ -614,9 +614,9 @@ async def filter_seasons_cb_handler(client: Client, query: CallbackQuery):
             ]
             for file in files
         ]
-    btn.insert(0, [
-        InlineKeyboardButton('❗❗  ʜᴏᴡ ᴛᴏ ᴅᴏᴡɴʟᴏᴀᴅ  ❗❗', url="https://t.me/MoviesDuniya4U")
-    ])
+    #btn.insert(0, [
+    #    InlineKeyboardButton('❗❗  ʜᴏᴡ ᴛᴏ ᴅᴏᴡɴʟᴏᴀᴅ  ❗❗', url="https://t.me/MoviesDuniya4U")
+    #])
     
 
     # btn.insert(0, [
@@ -1624,7 +1624,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('📁 Fɪʟᴇ Sᴛᴏʀᴇ', callback_data='store_file')
         ], [
             InlineKeyboardButton('📟 Cᴏɴɴᴇᴄᴛɪᴏɴ', callback_data='coct'),
-            InlineKeyboardButton('👑 Aᴅᴍɪɴ ᴍᴏᴅs', callback_data='menu')
+            InlineKeyboardButton('👑 Aᴅᴍɪɴ ᴍᴏᴅs', callback_data='adm')
         ], [
             InlineKeyboardButton('⚙️ Sᴇᴛᴛɪɴɢꜱ •', callback_data='settings'),
             InlineKeyboardButton('📱 Mᴇɴᴜ', callback_data='menu')
@@ -1672,8 +1672,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
             reply_markup=reply_markup,
             parse_mode=enums.ParseMode.HTML
         )
-
-    elif query.data == "admins":
+        
+    elif query.data == "adm":
         buttons = [[
             InlineKeyboardButton('⇋ Bᴀᴄᴋ ⇋', callback_data='adminmods')
         ]]
@@ -1684,10 +1684,11 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
-            text=script.ADMINS_TXT,
+            text=script.ADMIACC_TXT,
             reply_markup=reply_markup,
             parse_mode=enums.ParseMode.HTML
         )
+    
     
     
     elif query.data == "about":
