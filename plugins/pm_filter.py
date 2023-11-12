@@ -682,7 +682,7 @@ async def filter_seasons_cb_handler(client: Client, query: CallbackQuery):
     offset = 0
     btn.append([InlineKeyboardButton(text="↭ ʙᴀᴄᴋ ᴛᴏ ꜰɪʟᴇs ​↭", callback_data=f"fl#homepage#{key}")])
 
-    await query.edit_message_reply_markup(InlineKeyboardMarkup(btn))'''
+    await query.edit_message_reply_markup(InlineKeyboardMarkup(btn))
     
 
 @Client.on_callback_query(filters.regex(r"^fl#"))
@@ -830,7 +830,7 @@ async def filter_qualities_cb_handler(client: Client, query: CallbackQuery):
     
     #     await query.edit_message_reply_markup(reply_markup=InlineKeyboardMarkup(btn))
     
-    #quality-end
+    #quality-end'''
 
                 
 @Client.on_callback_query()
