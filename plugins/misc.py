@@ -1,7 +1,7 @@
 import os
 from pyrogram import Client, filters, enums
 from pyrogram.errors.exceptions.bad_request_400 import UserNotParticipant, MediaEmpty, PhotoInvalidDimensions, WebpageMediaEmpty
-from info import IMDB_TEMPLATEE
+from info import IMDB_TEMPLATEE,GRP_LNK
 from utils import extract_user, get_file_id, get_poster, last_online
 import time
 from datetime import datetime
@@ -20,7 +20,7 @@ async def showid(client, message):
         username = message.from_user.username
         dc_id = message.from_user.dc_id or ""
         await message.reply_text(
-            f"<b>➲ Fɪʀsᴛ Nᴀᴍᴇ:</b> {first}\n<b>➲ Lᴀsᴛ Nᴀᴍᴇ:</b> {last}\n<b>➲ Lᴀsᴛ Nᴀᴍᴇ:</b> {username}\n<b>➲ Tᴇʟᴇɢʀᴀᴍ ID:</b> <code>{user_id}</code>\n<b>➲ Dᴀᴛᴀ Cᴇɴᴛʀᴇ:</b> <code>{dc_id}</code>",
+            f"<b>➲ Fɪʀsᴛ Nᴀᴍᴇ:</b> {first}\n<b>➲ Lᴀsᴛ Nᴀᴍᴇ:</b> {last}\n<b>➲ Usᴇʀɴᴀᴍᴇ:</b> {username}\n<b>➲ Tᴇʟᴇɢʀᴀᴍ ID:</b> <code>{user_id}</code>\n<b>➲ Dᴀᴛᴀ Cᴇɴᴛʀᴇ:</b> <code>{dc_id}</code>",
             quote=True
         )
 
@@ -71,17 +71,17 @@ async def who_is(client, message):
         await status_message.edit(str(error))
         return
     if from_user is None:
-        return await status_message.edit("no valid user_id / message specified")
+        return await status_message.edit("Nᴏ ᴠᴀʟɪᴅ user_id / ᴍᴇssᴀɢᴇ sᴘᴇᴄɪғɪᴇᴅ")
     message_out_str = ""
-    message_out_str += f"<b>➲ Fɪʀꜱᴛ ɴᴀᴍᴇ:</b> {from_user.first_name}\n"
-    last_name = from_user.last_name or "<b>ɴᴏɴᴇ</b>"
-    message_out_str += f"<b>➲ Lᴀꜱᴛ ɴᴀᴍᴇ:</b> {last_name}\n"
-    message_out_str += f"<b>➲ Tᴇʟᴇɢʀᴀᴍ ɪᴅ:</b> <code>{from_user.id}</code>\n"
-    username = from_user.username or "<b>ɴᴏɴᴇ</b>"
+    message_out_str += f"<b>➲Fɪʀsᴛ Nᴀᴍᴇ:</b> {from_user.first_name}\n"
+    last_name = from_user.last_name or "<b>None</b>"
+    message_out_str += f"<b>➲Lᴀsᴛ Nᴀᴍᴇ:</b> {last_name}\n"
+    message_out_str += f"<b>➲Tᴇʟᴇɢʀᴀᴍ ID:</b> <code>{from_user.id}</code>\n"
+    username = from_user.username or "<b>None</b>"
     dc_id = from_user.dc_id or "[User Doesn't Have A Valid DP]"
-    message_out_str += f"<b>➲ Dᴀᴛᴀ ᴄᴇɴᴛʀᴇ:</b> <code>{dc_id}</code>\n"
-    message_out_str += f"<b>➲ Uꜱᴇʀɴᴀᴍᴇ:</b> @{username}\n"
-    message_out_str += f"<b>➲ Uꜱᴇʀʟɪɴᴋ:</b> <a href='tg://user?id={from_user.id}'><b>Cʟɪᴄᴋ ʜᴇʀᴇ</b></a>\n"
+    message_out_str += f"<b>➲Dᴀᴛᴀ Cᴇɴᴛʀᴇ:</b> <code>{dc_id}</code>\n"
+    message_out_str += f"<b>➲Usᴇʀ Nᴀᴍᴇ:</b> @{username}\n"
+    message_out_str += f"<b>➲Usᴇʀ Lɪɴᴋ:</b> <a href='tg://user?id={from_user.id}'><b>Cʟɪᴄᴋ Hᴇʀᴇ</b></a>\n"
     if message.chat.type in ((enums.ChatType.SUPERGROUP, enums.ChatType.CHANNEL)):
         try:
             chat_member_p = await message.chat.get_member(from_user.id)
@@ -89,7 +89,7 @@ async def who_is(client, message):
                 chat_member_p.joined_date or datetime.now()
             ).strftime("%Y.%m.%d %H:%M:%S")
             message_out_str += (
-                "<b>➲ Jᴏɪɴᴇᴅ ᴛʜɪꜱ ᴄʜᴀᴛ ᴏɴ:</b> <code>"
+                "<b>➲Jᴏɪɴᴇᴅ ᴛʜɪs ᴄʜᴀᴛ ᴏɴ:</b> <code>"
                 f"{joined_date}"
                 "</code>\n"
             )
@@ -101,7 +101,7 @@ async def who_is(client, message):
             message=chat_photo.big_file_id
         )
         buttons = [[
-            InlineKeyboardButton('↭ Cʟᴏsᴇ ↭', callback_data='close_data')
+            InlineKeyboardButton('🔐 Cʟᴏsᴇ', callback_data='close_data')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await message.reply_photo(
@@ -115,7 +115,7 @@ async def who_is(client, message):
         os.remove(local_user_photo)
     else:
         buttons = [[
-            InlineKeyboardButton('↭ Cʟᴏsᴇ ↭', callback_data='close_data')
+            InlineKeyboardButton('🔐 Cʟᴏsᴇ', callback_data='close_data')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await message.reply_text(
@@ -137,15 +137,15 @@ async def imdb_search(client, message):
             return await message.reply("Nᴏ Rᴇsᴜʟᴛs Fᴏᴜɴᴅ")
         btn = [
             [
-                InlineKeyboardButton(
-                    text=f"{movie.get('title')} - {movie.get('year')}",
-                    callback_data=f"imdb#{movie.movieID}",
-                )
+                InlineKeyboardButton(text=f"{movie.get('title')} - {movie.get('year')}",callback_data=f"imdb#{movie.movieID}",)
+                
             ]
+            
             for movie in movies
         ]
         btn.append([InlineKeyboardButton(text="Cʟᴏsᴇ", callback_data='close_data')])
         await k.edit('Hᴇʀᴇ ɪs ᴡʜᴀᴛ I Fᴏᴜɴᴅ ᴏɴ IMDB', reply_markup=InlineKeyboardMarkup(btn))
+        
     else:
         await message.reply('Gɪᴠᴇ ᴍᴇ ᴀ ᴍᴏᴠɪᴇ / Sᴇʀɪᴇs ɴᴀᴍᴇ')
 
@@ -153,7 +153,7 @@ async def imdb_search(client, message):
 async def imdb_callback(bot: Client, quer_y: CallbackQuery):
     i, movie = quer_y.data.split('#')
     imdb = await get_poster(query=movie, id=True)
-    btn =  [
+    btn = [
             [
                 InlineKeyboardButton('Tʀᴀɪʟᴇʀ 🎞',url=imdb['url'])
             ],[
