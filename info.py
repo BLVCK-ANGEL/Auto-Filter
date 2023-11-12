@@ -18,7 +18,7 @@ API_HASH = environ.get('API_HASH', '')
 BOT_TOKEN = environ.get('BOT_TOKEN', "")
 
 # Bot settings
-CACHE_TIME = int(environ.get('CACHE_TIME', 99999))
+CACHE_TIME = int(environ.get('CACHE_TIME', 300))
 USE_CAPTION_FILTER = bool(environ.get('USE_CAPTION_FILTER', True))
 
 PICS = (environ.get('PICS', 'https://telegra.ph/file/02f1708c444ffb92ff0ba.jpg https://telegra.ph/file/ede4953657c503e384e49.jpg https://telegra.ph/file/5da1807e4b0b64b900cd5.jpg https://telegra.ph/file/6c3870e2935321f4a33b2.jpg')).split()
@@ -115,9 +115,9 @@ else:
     
 QUALITIES = ["360p", "480p", "720p", "1080p", "1440p", "2160p"]
 
-LANGUAGES = ["Mᴀʟᴀʏᴀʟᴀᴍ", "Tᴀᴍɪʟ" ,"Eɴɢʟɪsʜ", "Hɪɴᴅɪ", "Tᴇʟᴜɢᴜ", "Kᴀɴɴᴀᴅᴀ"]
+LANGUAGES = ["malayalam", "tamil" ,"english", "hindi", "telugu", "kannada"]
 
-SEASONS = ["Sᴇᴀsᴏɴ 𝟷" , "Sᴇᴀsᴏɴ 𝟸" , "Sᴇᴀsᴏɴ 𝟹" , "Sᴇᴀsᴏɴ 𝟺", "Sᴇᴀsᴏɴ 𝟻" , "Sᴇᴀsᴏɴ 𝟼" , "Sᴇᴀsᴏɴ 𝟽" , "Sᴇᴀsᴏɴ 𝟾" , "Sᴇᴀsᴏɴ 𝟿" , "Sᴇᴀsᴏɴ 𝟷𝟶"]
+SEASONS = ["season 1" , "season 2" , "season 3" , "season 4", "season 5" , "season 6" , "season 7" , "season 8" , "season 9" , "season 10"]
 
 LOG_STR = "Current Cusomized Configurations are:-\n"
 LOG_STR += ("IMDB Results are enabled, Bot will be showing imdb details for you queries.\n" if IMDB else "IMBD Results are disabled.\n")
