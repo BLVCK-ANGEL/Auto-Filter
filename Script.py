@@ -34,6 +34,9 @@ Hᴇʀᴇ Is Tʜᴇ Hᴇʟᴘ Fᴏʀ Mʏ Cᴏᴍᴍᴀɴᴅs.</b>"""
 • Dᴇᴠᴇʟᴏᴘᴇʀ: <a href="https://t.me/blvckangl">Jᴏʏʙᴏʏ</a></b></b>
 """
 
+    ADMINACC_TXT = """<b><u>Hᴇʀᴇ Yᴏᴜ Cᴀɴ Aᴄᴄᴇss Sᴏᴍᴇ Aᴅᴍɪɴ Fᴇᴀᴛᴜʀᴇs</u></b>
+    """
+    
     SETTINGS_TXT = """
 Hᴇʟᴘ : <b>Sᴇᴛᴛɪɴɢꜱ</b>
     
@@ -48,18 +51,7 @@ Hᴇʟᴘ : <b>Sᴇᴛᴛɪɴɢꜱ</b>
 • /connect - ᴄᴏɴɴᴇᴄᴛ ʏᴏᴜʀ ɢʀᴏᴜᴘ ᴛᴏ ʙᴏᴛ
 • /settings - ᴄʜᴀɴɢᴇ sᴇᴛᴛɪɴɢs ᴀs ʏᴏᴜʀ ᴡɪsʜ """
 
-    TELEGRAPH_TXT = """ Hᴇʟᴘ : <b>Tᴇʟᴇɢʀᴀᴘʜ</b>
-
-<b>Nᴏᴛᴇ</b>: ᴛʜɪꜱ ᴄᴏᴍᴍᴀɴᴅ ɪꜱ ᴀᴠᴀɪʟᴀʙʟᴇ ɪɴ ɢʀᴏᴜᴘꜱ ᴀɴᴅ ᴘᴍꜱ. ᴀʟꜱᴏ ᴄᴀɴ ʙᴇ ᴜꜱᴇ ʙʏ ᴇᴠᴇʀʏᴏɴᴇ.
-
-<b>Cᴏᴍᴍᴀɴᴅs & Usᴀɢᴇ :</b>
-• /telegraph - sᴇɴᴅ ᴍᴇ ᴘɪᴄᴛᴜʀᴇ ᴏʀ ᴠɪᴅᴇᴏ ᴜɴᴅᴇʀ 𝟻ᴍʙ"""
-
-    FONT_TXT = """Hᴇʟᴘ : <b>Fᴏɴᴛ</b>
-
-<b>Nᴏᴛᴇ</b>: ʏᴏᴜ ᴄᴀɴ ᴜꜱᴇ ᴛʜɪꜱ ᴍᴏᴅᴇ ᴛᴏ ᴄʜᴀɴɢᴇ ʏᴏᴜʀ ꜰᴏɴᴛꜱ ꜱᴛʏʟᴇ, ᴊᴜꜱᴛ ꜱᴇɴᴅ ᴍᴇ ʟɪᴋᴇ ᴛʜɪꜱ ꜰᴏʀᴍᴀᴛ. 
-
-<code>/font TG_LINKS_CHANNEL</code>"""
+    
 
     MANUELFILTER_TXT = """Hᴇʟᴘ : <b>Fɪʟᴛᴇʀꜱ</b>
     
@@ -149,17 +141,7 @@ Tʜɪs Mᴏᴅᴜʟᴇ Oɴʟʏ Wᴏʀᴋs Fᴏʀ Mʏ Aᴅᴍɪɴs.
 • /delallg - ᴛᴏ ᴅᴇʟᴇᴛᴇ ᴀʟʟ ɢғɪʟᴛᴇʀs ғʀᴏᴍ ᴛʜᴇ ʙᴏᴛ's ᴅᴀᴛᴀʙᴀsᴇ.
 • /deletefiles - ᴛᴏ ᴅᴇʟᴇᴛᴇ ᴄᴀᴍʀɪᴘ ᴀɴᴅ ᴘʀᴇ-ᴅᴠᴅ ғɪʟᴇs ғʀᴏᴍ ᴛʜᴇ ʙᴏᴛ's ᴅᴀᴛᴀʙᴀsᴇ."""
 
-    STICKER_TXT = """<b>yᴏᴜ ᴄᴀɴ ᴜꜱᴇ ᴛʜɪꜱ ᴍᴏᴅᴜʟᴇ ᴛᴏ ꜰɪɴᴅᴀɴy  ꜱᴛɪᴄᴋᴇʀꜱ ɪᴅ.
-• ᴜꜱᴀɢᴇ :ᴛᴏ ɢᴇᴛ ꜱᴛɪᴄᴋᴇʀ
- 
-⭕ ʜᴏᴡ ᴛᴏ ᴜꜱᴇ
-◉ Reply To Any Sticker [/stickerid]
-
-/𝐬𝐭𝐢𝐜𝐤𝐞𝐫𝐢𝐝 𝐬𝐭𝐢𝐜𝐤𝐞𝐫 𝐢𝐝
-/𝐠𝐞𝐭𝐬𝐭𝐢𝐜𝐤𝐞𝐫 𝐜𝐫𝐞𝐚𝐭𝐞 𝐬𝐮𝐩𝐩𝐫𝐚𝐭𝐞 𝐬𝐭𝐢𝐜𝐤𝐞𝐫
-/𝐟𝐢𝐧𝐝𝐬𝐭𝐢𝐜𝐤𝐞𝐫 𝐬𝐭𝐢𝐜𝐤𝐞𝐫 𝐢𝐝 𝐭𝐨 𝐬𝐭𝐢𝐜𝐤𝐞𝐫
-
-</b>"""
+    
  
     STATUS_TXT = """<b>⍟─────[ <b>Bᴏᴛ Sᴛᴀᴛᴜs</b> ]─────⍟
     
@@ -244,28 +226,28 @@ Mᴏᴠɪᴇs Nᴏᴛ Aᴠᴀɪʟᴀʙʟᴇ Rᴇᴀsᴏɴ:
     CAPTION = """ 
 🗂 𝗙𝗶𝗹𝗲: <b><font class=smcp>{file_name}</font></b>
 📀 𝗦𝗶𝘇𝗲: <b><font class=smcp>{file_size}</font></b>
-
+<b>
 ╭─────── • ◆ • ───────╮
 🔅 Rᴇᴛʀᴏ Mᴏᴅᴇ :  <a href="https://t.me/addtheme/Retrov2">Aᴘᴘʟʏ</a>        🔅
 ╰─────── • ◆ • ───────╯
 ========= • ✠ • =========
 ▫️ Eɴᴊᴏʏ ᴛʜᴇ Fɪʟᴍꜱ Aɴᴅ Sᴇʀɪᴇꜱ..
 ▫️ @SRJ_TELEFLIX ©
-========= • ✠ • ========="""
+========= • ✠ • =========</b>"""
 
     
     IMDB_TEMPLATE_TXT = """
 <b>Query: {query}
-<u>{title}</u>
-
-🏷 <b>Tɪᴛʟᴇ: <a href={url}>{title}</a></b>
-🎭 <b>Gᴇɴʀᴇs: {genres}</b>
-📆 <b>Yᴇᴀʀ: <a href={url}/releaseinfo>{year}</a>
-🌟 <b>Rᴀᴛɪɴɢ: <a href={url}/ratings>{rating}</a> / 10 (Based on {votes} user ratings)</b>
-🎙️ <b>Lᴀɴɢᴜᴀɢᴇs: <code>{languages}</code></a></b>
-📀 <b>Rᴜɴᴛɪᴍᴇ: {runtime} Minutes</a></b>
-
-🗣 𝗥𝗲𝗾𝘂𝗲𝘀𝘁𝗲𝗱 𝗕𝘆: <b><code>{msg.from_user.mention}</code></b>"""
+🏷 <b>Title: <a href={url}>{title}</a>
+╭───────────────────
+├ 🎭 <b>Genres:</b> {genres}
+├ 📆 <b>Year:</b> <a href={url}/releaseinfo>{year}</a>
+├ 🌟 <b>Rating:</b> <a href={url}/ratings>{rating}</a> / 10 (Based on {votes} user ratings)
+├ 🎙️ <b>Lᴀɴɢᴜᴀɢᴇs:</b> <code>{languages}</code></a>
+├ 📀 <b>Rᴜɴᴛɪᴍᴇ:</b> {runtime} Minutes</a>
+├───────────────────
+├ 🗣 𝗥𝗲𝗾𝘂𝗲𝘀𝘁𝗲𝗱 𝗕𝘆: <b><code>{msg.from_user.mention}</code></b>
+╰───────────────────"""
 
     IMDB_TEMPLATEE_TXT = """
 🏷 <b>Title: <a href={url}>{title}</a>
