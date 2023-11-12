@@ -43,6 +43,7 @@ FRESH = {}
 BUTTONS0 = {}
 BUTTONS1 = {}
 BUTTONS2 = {}
+BUTTONS3 = {}
 SPELL_CHECK = {}
 # ENABLE_SHORTLINK = ""
 
@@ -529,7 +530,7 @@ async def filter_seasons_cb_handler(client: Client, query: CallbackQuery):
     search = FRESH.get(key)
     search = search.replace("_", " ")
     sea = ""
-    season_search = ["s01","s02", "s03", "s04", "s05", "s06", "s07", "s08", "s09","s10","s1","s2","s3","s4","s5","s6","s7","s8","s9","s10","season 01","season 02","season 03","season 04","season 05","season 06","season 07","season 08","season 09","season 10", "season 1","season 2","season 3","season 4","season 5","season 6","season 7","season 8","season 9"]
+    season_search = ["s01","s02", "s03", "s04", "s05", "s06", "s07", "s08", "s09","s10","s1","s2","s3","s4","s5","s6","s7","s8","s9","season 01","season 02","season 03","season 04","season 05","season 06","season 07","season 08","season 09","season 10", "season 1","season 2","season 3","season 4","season 5","season 6","season 7","season 8","season 9"]
     for x in range (len(season_search)):
         if season_search[x] in search:
             sea = season_search[x]
@@ -570,7 +571,7 @@ async def filter_seasons_cb_handler(client: Client, query: CallbackQuery):
     if files1:
         files.extend(files1)
     
-    seas2 = "season 01" if seas == "season 1" else "season 02" if seas == "season 2" else "season 03" if seas == "season 3" else "season 04" if seas == "season 4" else "season 05" if seas == "season 5" else "season 06" if seas == "season 6" else "season 07" if seas == "season 7" else "season 08" if seas == "season 8" else "season 09" if seas == "season 9" else "s010"
+    seas2 = "season 01" if seas == "season 1" else "season 02" if seas == "season 2" else "season 03" if seas == "season 3" else "season 04" if seas == "season 4" else "season 05" if seas == "season 5" else "season 06" if seas == "season 6" else "season 07" if seas == "season 7" else "season 08" if seas == "season 8" else "season 09" if seas == "season 9" else "s010" 
     search2 = f"{search2} {seas2}"
     BUTTONS2[key] = search2
     files2, _, _ = await get_search_results(chat_id, search2, max_results=10)
@@ -578,6 +579,15 @@ async def filter_seasons_cb_handler(client: Client, query: CallbackQuery):
 
     if files2:
         files.extend(files2)
+        
+    seas3 = "s1" if seas == "season 1" else "s2" if seas == "season 2" else "s3" if seas == "season 3" else "s4" if seas == "season 4" else "s5" if seas == "season 5" else "s6" if seas == "season 6" else "s7" if seas == "season 7" else "s8" if seas == "season 8" else "s9" if seas == "season 9" else "s010"
+    search3 = f"{search3} {seas3}"
+    BUTTONS3[key] = search3
+    files3, _, _ = await get_search_results(chat_id, search3, max_results=10)
+    files3 = [file for file in files2 if re.search(seas3, file.file_name, re.IGNORECASE)]
+
+    if files3:
+        files.extend(files3)
         
     if not files:
         await query.answer("🚫 Nᴏ Fɪʟᴇ Wᴇʀᴇ Fᴏᴜɴᴅ 🚫", show_alert=1)
@@ -1197,7 +1207,10 @@ async def cb_handler(client: Client, query: CallbackQuery):
         search = BUTTONS2.get(key)
         files, n_offset, total = await get_search_results(query.message.chat.id, search, offset=int(offset), filter=True)
         await send_all(client, query.from_user.id, files, ident, query.message.chat.id, query.from_user.first_name, query)
-        await query.answer(f"Hey {query.from_user.first_name}, All files on this page has been sent successfully to your PM !", show_alert=True)
+        search = BUTTONS3.get(key)
+        files, n_offset, total = await get_search_results(query.message.chat.id, search, offset=int(offset), filter=True)
+        await send_all(client, query.from_user.id, files, ident, query.message.chat.id, query.from_user.first_name, query)
+        await query.answer(f"Hey {query.from_user.first_name}, Aʟʟ ғɪʟᴇs ᴏɴ ᴛʜɪs ᴘᴀɢᴇ ʜᴀs ʙᴇᴇɴ sᴇɴᴛ sᴜᴄᴄᴇssғᴜʟʟʏ ᴛᴏ ʏᴏᴜʀ PM!", show_alert=True)
                 
     elif query.data.startswith("killfilesdq"):
         ident, keyword = query.data.split("#")
@@ -1542,13 +1555,15 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("⏩ Fᴀsᴛ Dᴏᴡɴʟᴏᴀᴅ", url=lazy_download),  # we download Link
                                                     InlineKeyboardButton('🌐 Wᴀᴛᴄʜ Oɴʟɪɴᴇ', url=lazy_stream)]])  # web stream Link
             )
-            await query.message.reply_text(
+            xz=await query.message.reply_text(
                 text="🔗 Lɪɴᴋ Gᴇɴᴇʀᴀᴛᴇᴅ ",
                 quote=True,
                 disable_web_page_preview=True,
                 reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("⏩ Fᴀsᴛ Dᴏᴡɴʟᴏᴀᴅ", url=lazy_download),  # we download Link
                                                     InlineKeyboardButton('🌐 Wᴀᴛᴄʜ Oɴʟɪɴᴇ', url=lazy_stream)]])  # web stream Link
             )
+            await asyncio.sleep(600)
+            await xz.delete()
         except Exception as e:
             print(e)  # print the error message
             await query.answer(f"Sᴏᴍᴇᴛʜɪɴɢ Wᴇɴᴛ Wʀᴏɴɢ \n\n{e}", show_alert=True)
@@ -1620,7 +1635,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('📁 Fɪʟᴇ Sᴛᴏʀᴇ', callback_data='store_file')
         ], [
             InlineKeyboardButton('📟 Cᴏɴɴᴇᴄᴛɪᴏɴ', callback_data='coct'),
-            InlineKeyboardButton('👑 Aᴅᴍɪɴ ᴍᴏᴅs', callback_data='admin')
+            InlineKeyboardButton('👑 Aᴅᴍɪɴ ᴍᴏᴅs', callback_data='admins')
         ], [
             InlineKeyboardButton('⚙️ Sᴇᴛᴛɪɴɢꜱ •', callback_data='settings'),
             InlineKeyboardButton('📱 Mᴇɴᴜ', callback_data='menu')
@@ -1665,6 +1680,22 @@ async def cb_handler(client: Client, query: CallbackQuery):
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
             text=script.GFILTER_TXT,
+            reply_markup=reply_markup,
+            parse_mode=enums.ParseMode.HTML
+        )
+
+    elif query.data == "admins":
+        buttons = [[
+            InlineKeyboardButton('⇋ Bᴀᴄᴋ ⇋', callback_data='adminmods')
+        ]]
+        await client.edit_message_media(
+            query.message.chat.id, 
+            query.message.id, 
+            InputMediaPhoto(random.choice(PICS))
+        )
+        reply_markup = InlineKeyboardMarkup(buttons)
+        await query.message.edit_text(
+            text=script.ADMINS_TXT,
             reply_markup=reply_markup,
             parse_mode=enums.ParseMode.HTML
         )
@@ -1800,21 +1831,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             parse_mode=enums.ParseMode.HTML
         )
     
-    elif query.data == "admin":
-        buttons = [[
-            InlineKeyboardButton('⇋ Bᴀᴄᴋ ⇋', callback_data='adminmods')
-        ]]
-        await client.edit_message_media(
-            query.message.chat.id, 
-            query.message.id, 
-            InputMediaPhoto(random.choice(PICS))
-        )
-        reply_markup = InlineKeyboardMarkup(buttons)
-        await query.message.edit_text(
-            text=script.ADMIN_TXT,
-            reply_markup=reply_markup,
-            parse_mode=enums.ParseMode.HTML
-        )
+    
     
     elif query.data == "settings":
             buttons = [[
