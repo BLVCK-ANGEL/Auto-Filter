@@ -18,21 +18,21 @@ async def addgfilter(client, message):
     args = message.text.html.split(None, 1)
 
     if len(args) < 2:
-        await message.reply_text("Command Incomplete :(", quote=True)
+        await message.reply_text("Cᴏᴍᴍᴀɴᴅ Iɴᴄᴏᴍᴘʟᴇᴛᴇ:(", quote=True)
         return
 
     extracted = split_quotes(args[1])
     text = extracted[0].lower()
 
     if not message.reply_to_message and len(extracted) < 2:
-        await message.reply_text("Add some content to save your filter!", quote=True)
+        await message.reply_text("Aᴅᴅ sᴏᴍᴇ ᴄᴏɴᴛᴇɴᴛ ᴛᴏ sᴀᴠᴇ ʏᴏᴜʀ ғɪʟᴛᴇʀ!", quote=True)
         return
 
     if (len(extracted) >= 2) and not message.reply_to_message:
         reply_text, btn, alert = gfilterparser(extracted[1], text)
         fileid = None
         if not reply_text:
-            await message.reply_text("You cannot have buttons alone, give some text to go with it!", quote=True)
+            await message.reply_text("Yᴏᴜ ᴄᴀɴɴᴏᴛ ʜᴀᴠᴇ ʙᴜᴛᴛᴏɴs ᴀʟᴏɴᴇ, ɢɪᴠᴇ sᴏᴍᴇ ᴛᴇxᴛ ᴛᴏ ɢᴏ ᴡɪᴛʜ ɪᴛ!", quote=True)
             return
 
     elif message.reply_to_message and message.reply_to_message.reply_markup:
@@ -87,7 +87,7 @@ async def get_all_gfilters(client, message):
     texts = await get_gfilters('gfilters')
     count = await count_gfilters('gfilters')
     if count:
-        gfilterlist = f"Total number of gfilters : {count}\n\n"
+        gfilterlist = f"Tᴏᴛᴀʟ ɴᴜᴍʙᴇʀ ᴏғ ɢғɪʟᴛᴇʀs : {count}\n\n"
 
         for text in texts:
             keywords = " ×  `{}`\n".format(text)
@@ -103,7 +103,7 @@ async def get_all_gfilters(client, message):
                 )
             return
     else:
-        gfilterlist = f"There are no active gfilters."
+        gfilterlist = f"Tʜᴇʀᴇ ᴀʀᴇ ɴᴏ ᴀᴄᴛɪᴠᴇ ɢғɪʟᴛᴇʀs."
 
     await message.reply_text(
         text=gfilterlist,
@@ -117,9 +117,9 @@ async def deletegfilter(client, message):
         cmd, text = message.text.split(" ", 1)
     except:
         await message.reply_text(
-            "<i>Mention the gfiltername which you wanna delete!</i>\n\n"
+            "<i>ᴍᴇɴᴛɪᴏɴ ᴛʜᴇ Gғɪʟᴛᴇʀɴᴀᴍᴇ ᴡʜɪᴄʜ ʏᴏᴜ ᴡᴀɴɴᴀ ᴅᴇʟᴇᴛᴇ!</i>\n\n"
             "<code>/delg gfiltername</code>\n\n"
-            "Use /viewgfilters to view all available gfilters",
+            "Usᴇ /viewgfilters ᴛᴏ ᴠɪᴇᴡ ᴀʟʟ ᴀᴠᴀɪʟᴀʙʟᴇ ɢғɪʟᴛᴇʀs",
             quote=True
         )
         return
@@ -131,10 +131,10 @@ async def deletegfilter(client, message):
 @Client.on_message(filters.command('delallg') & filters.user(ADMINS))
 async def delallgfilters(client, message):
     await message.reply_text(
-            f"Do you want to continue??",
+            f"Dᴏ ʏᴏᴜ ᴡᴀɴᴛ ᴛᴏ ᴄᴏɴᴛɪɴᴜᴇ??",
             reply_markup=InlineKeyboardMarkup([
-                [InlineKeyboardButton(text="YES",callback_data="gfiltersdeleteallconfirm")],
-                [InlineKeyboardButton(text="CANCEL",callback_data="gfiltersdeleteallcancel")]
+                [InlineKeyboardButton(text="Yᴇs ",callback_data="gfiltersdeleteallconfirm")],
+                [InlineKeyboardButton(text="Cᴀɴᴄᴇʟ",callback_data="gfiltersdeleteallcancel")]
             ]),
             quote=True
         )
