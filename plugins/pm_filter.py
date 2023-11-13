@@ -481,7 +481,7 @@ async def seasons_cb_handler(client: Client, query: CallbackQuery):
     try:
         if int(query.from_user.id) not in [query.message.reply_to_message.from_user.id, 0]:
             return await query.answer(
-                f"⚠️ ʜᴇʟʟᴏ{query.from_user.first_name},\nᴛʜɪꜱ ɪꜱ ɴᴏᴛ ʏᴏᴜʀ ᴍᴏᴠɪᴇ ʀᴇQᴜᴇꜱᴛ,\nʀᴇQᴜᴇꜱᴛ ʏᴏᴜʀ'ꜱ...",
+                f"⚠️ ʜᴇʟʟᴏ{query.from_user.first_name},\nTʜɪꜱ ɪꜱ ɴᴏᴛ ʏᴏᴜʀ ᴍᴏᴠɪᴇ ʀᴇQᴜᴇꜱᴛ,\nRᴇQᴜᴇꜱᴛ ʏᴏᴜʀ'ꜱ...",
                 show_alert=False,
             )
     except:
@@ -519,7 +519,7 @@ async def seasons_cb_handler(client: Client, query: CallbackQuery):
     )
     req = query.from_user.id
     offset = 0
-    btn.append([InlineKeyboardButton(text="↭ ʙᴀᴄᴋ ᴛᴏ ꜰɪʟᴇs ​↭", callback_data=f"next_{req}_{key}_{offset}")])
+    btn.append([InlineKeyboardButton(text="↭ Bᴀᴄᴋ ᴛᴏ ꜰɪʟᴇs ​↭", callback_data=f"next_{req}_{key}_{offset}")])
 
     await query.edit_message_reply_markup(InlineKeyboardMarkup(btn))
 
@@ -1542,7 +1542,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                                                     InlineKeyboardButton('🌐 Wᴀᴛᴄʜ Oɴʟɪɴᴇ', url=lazy_stream)]])  # web stream Link
             )
             xz=await query.message.reply_text(
-                text="🔗 Lɪɴᴋ Gᴇɴᴇʀᴀᴛᴇᴅ ",
+                text="🔗 Lɪɴᴋ Gᴇɴᴇʀᴀᴛᴇᴅ.\n\n ❗️❗️❗️𝗜𝗠𝗣𝗢𝗥𝗧𝗔𝗡𝗧❗️️❗️❗️\n\n<b>Tʜɪs Gᴇɴᴇʀᴀᴛᴇᴅ Lɪɴᴋ Wɪʟʟ Bᴇ Dᴇʟᴇᴛᴇᴅ Iɴ 𝟷𝟶 Mɪɴs 🔰 Dᴜᴇ Tᴏ Cᴏᴘʏʀɪɢʜᴛ Issᴜᴇs.</b>\n\n<b>➸ Pʟᴇᴀsᴇ Fᴏʀᴡᴀʀᴅ Tʜɪs Gᴇɴᴇʀᴀᴛᴇᴅ Lɪɴᴋ Tᴏ Yᴏᴜʀ Sᴀᴠᴇᴅ Mᴇssᴀɢᴇs",
                 quote=True,
                 disable_web_page_preview=True,
                 reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("⏩ Fᴀsᴛ Dᴏᴡɴʟᴏᴀᴅ", url=lazy_download),  # we download Link
@@ -1695,7 +1695,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('Sᴏᴜʀᴄᴇ Cᴏᴅᴇ', callback_data='source'),
             InlineKeyboardButton('Sᴜᴘᴘᴏʀᴛ', url=CHNL_LNK)
         ],[
-            InlineKeyboardButton('⇋ Bᴀᴄᴋ ᴛᴏ ʜᴏᴍᴇ ⇋', callback_data='menu')
+            InlineKeyboardButton('⇋ Bᴀᴄᴋ ᴛᴏ ᴍᴇɴᴜ ⇋', callback_data='menu')
         ]]
         await client.edit_message_media(
             query.message.chat.id, 
@@ -1984,7 +1984,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                                          callback_data=f'setgs#spell_check#{settings["spell_check"]}#{str(grp_id)}')
                 ],
                 [
-                    InlineKeyboardButton('Wᴇʟᴄᴏᴍᴇ ᴍꜱɢ', callback_data=f'setgs#welcome#{settings["welcome"]}#{str(grp_id)}'),
+                    InlineKeyboardButton('Wᴇʟᴄᴏᴍᴇ ', callback_data=f'setgs#welcome#{settings["welcome"]}#{str(grp_id)}'),
                     InlineKeyboardButton('Eɴᴀʙʟᴇ' if settings["welcome"] else 'Dɪꜱᴀʙʟᴇ',
                                          callback_data=f'setgs#welcome#{settings["welcome"]}#{str(grp_id)}')
                 ],
