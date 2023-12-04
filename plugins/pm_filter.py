@@ -1203,7 +1203,15 @@ async def cb_handler(client: Client, query: CallbackQuery):
         #await query.message.edit_text(f"<b>Fetching Files for your query {keyword} on DB... Please wait...</b>")
         files, total = await get_bad_files(keyword)
         await query.message.edit_text("<b>Fɪʟᴇ ᴅᴇʟᴇᴛɪᴏɴ ᴘʀᴏᴄᴇss ᴡɪʟʟ sᴛᴀʀᴛ ɪɴ 𝟻 sᴇᴄᴏɴᴅs!</b>")
-        await asyncio.sleep(5)
+        await asyncio.sleep(1)
+        await query.message.edit_text("<b>Fɪʟᴇ ᴅᴇʟᴇᴛɪᴏɴ ᴘʀᴏᴄᴇss ᴡɪʟʟ sᴛᴀʀᴛ ɪɴ 4 sᴇᴄᴏɴᴅs!</b>")
+        await asyncio.sleep(1)
+        await query.message.edit_text("<b>Fɪʟᴇ ᴅᴇʟᴇᴛɪᴏɴ ᴘʀᴏᴄᴇss ᴡɪʟʟ sᴛᴀʀᴛ ɪɴ 3 sᴇᴄᴏɴᴅs!</b>")
+        await asyncio.sleep(1)
+        await query.message.edit_text("<b>Fɪʟᴇ ᴅᴇʟᴇᴛɪᴏɴ ᴘʀᴏᴄᴇss ᴡɪʟʟ sᴛᴀʀᴛ ɪɴ 2 sᴇᴄᴏɴᴅs!</b>")
+        await asyncio.sleep(1)
+        await query.message.edit_text("<b>Fɪʟᴇ ᴅᴇʟᴇᴛɪᴏɴ ᴘʀᴏᴄᴇss ᴡɪʟʟ sᴛᴀʀᴛ ɪɴ 1 sᴇᴄᴏɴᴅs!</b>")
+        await asyncio.sleep(1)
         deleted = 0
         async with lock:
             try:
