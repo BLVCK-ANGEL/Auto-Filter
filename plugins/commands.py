@@ -28,13 +28,13 @@ async def start(client, message):
         buttons =  [[
                     InlineKeyboardButton('⤬ Aᴅᴅ Mᴇ Tᴏ Yᴏᴜʀ Gʀᴏᴜᴘ ⤬', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
                 ],[
-                    InlineKeyboardButton('📱Bᴏᴛ Mᴇɴᴜ', callback_data="menu"),
-                    InlineKeyboardButton('• ʀᴜʟᴇꜱ •', callback_data='rule'),
+                    InlineKeyboardButton('♔ Mᴇɴᴜ', callback_data="menu"),
+                    InlineKeyboardButton('⇨ ʀᴜʟᴇꜱ ', callback_data='rule'),
                     
                    
                 ],[
-                    InlineKeyboardButton('⌬ Rᴇǫᴜᴇsᴛ Gʀᴏᴜᴘ ⌬', url=GRP_LNK),
-                    InlineKeyboardButton('✇ Uᴘᴅᴀᴛᴇs Cʜᴀɴɴᴇʟ ✇', url=CHNL_LNK)
+                    InlineKeyboardButton('⌬ Rᴇǫᴜᴇsᴛ Gʀᴏᴜᴘ ', url=GRP_LNK),
+                    InlineKeyboardButton('✇ Uᴘᴅᴀᴛᴇs Cʜᴀɴɴᴇʟ ', url=CHNL_LNK)
                     
                 ]]
         reply_markup = InlineKeyboardMarkup(buttons)
@@ -52,13 +52,13 @@ async def start(client, message):
         buttons =  [[
                     InlineKeyboardButton('⤬ Aᴅᴅ Mᴇ Tᴏ Yᴏᴜʀ Gʀᴏᴜᴘ ⤬', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
                 ],[
-                    InlineKeyboardButton('📱Bᴏᴛ Mᴇɴᴜ', callback_data="menu"),
-                    InlineKeyboardButton('• ʀᴜʟᴇꜱ •', callback_data='rule'),
+                    InlineKeyboardButton('♔ Mᴇɴᴜ', callback_data="menu"),
+                    InlineKeyboardButton('⇨ ʀᴜʟᴇꜱ •', callback_data='rule'),
                     
                    
                 ],[
-                    InlineKeyboardButton('⌬ Rᴇǫᴜᴇsᴛ Gʀᴏᴜᴘ ⌬', url=GRP_LNK),
-                    InlineKeyboardButton('✇ Uᴘᴅᴀᴛᴇs Cʜᴀɴɴᴇʟ ✇', url=CHNL_LNK)
+                    InlineKeyboardButton('⌬ Rᴇǫᴜᴇsᴛ Gʀᴏᴜᴘ ', url=GRP_LNK),
+                    InlineKeyboardButton('✇ Uᴘᴅᴀᴛᴇs Cʜᴀɴɴᴇʟ ', url=CHNL_LNK)
                     
                 ]]
         reply_markup = InlineKeyboardMarkup(buttons)
@@ -101,13 +101,13 @@ async def start(client, message):
         buttons = [[
                     InlineKeyboardButton('⤬ Aᴅᴅ Mᴇ Tᴏ Yᴏᴜʀ Gʀᴏᴜᴘ ⤬', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
                 ],[
-                    InlineKeyboardButton('📱Bᴏᴛ Mᴇɴᴜ', callback_data="menu"),
-                    InlineKeyboardButton('• ʀᴜʟᴇꜱ •', callback_data='rule'),
+                    InlineKeyboardButton('♔ Mᴇɴᴜ', callback_data="menu"),
+                    InlineKeyboardButton('⇨ ʀᴜʟᴇꜱ', callback_data='rule'),
                     
                    
                 ],[
-                    InlineKeyboardButton('⌬ Rᴇǫᴜᴇsᴛ Gʀᴏᴜᴘ ⌬', url=GRP_LNK),
-                    InlineKeyboardButton('✇ Uᴘᴅᴀᴛᴇs Cʜᴀɴɴᴇʟ ✇', url=CHNL_LNK)
+                    InlineKeyboardButton('⌬ Rᴇǫᴜᴇsᴛ Gʀᴏᴜᴘ ', url=GRP_LNK),
+                    InlineKeyboardButton('✇ Uᴘᴅᴀᴛᴇs Cʜᴀɴɴᴇʟ ', url=CHNL_LNK)
                     
                 ]]
         reply_markup = InlineKeyboardMarkup(buttons)      
@@ -1106,6 +1106,16 @@ async def settutorial(bot, message):
 @Client.on_message(filters.command("restart") & filters.user(ADMINS))
 async def stop_button(bot, message):
     msg = await bot.send_message(text="**🔄 𝙿ʀᴏᴄᴇss sᴛᴏᴘᴘᴇᴅ ʙᴏᴛ ɪs ʀᴇsᴛᴀʀᴛɪɴɢ..**", chat_id=message.chat.id)       
-    await asyncio.sleep(3)
+    await asyncio.sleep(1)
+    await msg.edit("**5 Sᴇᴄᴏɴᴅs**")
+    await asyncio.sleep(1)
+    await msg.edit("**4 Sᴇᴄᴏɴᴅs**")
+    await asyncio.sleep(1)
+    await msg.edit("**3 Sᴇᴄᴏɴᴅs**")
+    await asyncio.sleep(1)
+    await msg.edit("**2 Sᴇᴄᴏɴᴅs**")
+    await asyncio.sleep(1)
+    await msg.edit("**1 Sᴇᴄᴏɴᴅs**")
+    await asyncio.sleep(1)
     await msg.edit("**✅️ Bᴏᴛ ʀᴇsᴛᴀʀᴛᴇᴅ**")
     os.execl(sys.executable, sys.executable, *sys.argv)
