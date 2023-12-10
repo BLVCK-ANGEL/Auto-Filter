@@ -1577,13 +1577,13 @@ async def cb_handler(client: Client, query: CallbackQuery):
         buttons =  [[
                     InlineKeyboardButton('⤬ Aᴅᴅ Mᴇ Tᴏ Yᴏᴜʀ Gʀᴏᴜᴘ ⤬', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
                 ],[
-                    InlineKeyboardButton('📱Bᴏᴛ Mᴇɴᴜ', callback_data="menu"),
-                    InlineKeyboardButton('• ʀᴜʟᴇꜱ •', callback_data='rule'),
+                    InlineKeyboardButton('♔ Mᴇɴᴜ', callback_data="menu"),
+                    InlineKeyboardButton('⇨ Rᴜʟᴇꜱ ', callback_data='rule'),
                     
                    
                 ],[
-                    InlineKeyboardButton('⌬ Rᴇǫᴜᴇsᴛ Gʀᴏᴜᴘ ⌬', url=GRP_LNK),
-                    InlineKeyboardButton('✇ Uᴘᴅᴀᴛᴇs Cʜᴀɴɴᴇʟ ✇', url=CHNL_LNK)
+                    InlineKeyboardButton('⌬ Rᴇǫᴜᴇsᴛ Gʀᴏᴜᴘ ', url=GRP_LNK),
+                    InlineKeyboardButton('✇ Mᴏᴠɪᴇ ᴜᴘᴅᴀᴛᴇs ', url=CHNL_LNK)
                     
                 ]]
         
@@ -1701,7 +1701,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('❗❗ Dɪꜱᴄʟᴀɪᴍᴇʀ ❗❗', callback_data='disclaimer')
         ], [
             InlineKeyboardButton('Sᴏᴜʀᴄᴇ Cᴏᴅᴇ', callback_data='source'),
-            InlineKeyboardButton('Sᴜᴘᴘᴏʀᴛ', url=CHNL_LNK)
+            InlineKeyboardButton('Mᴏᴠɪᴇ ᴜᴘᴅᴀᴛᴇs', url=CHNL_LNK)
         ],[
             InlineKeyboardButton('⇋ Bᴀᴄᴋ ᴛᴏ ᴍᴇɴᴜ ⇋', callback_data='menu')
         ]]
