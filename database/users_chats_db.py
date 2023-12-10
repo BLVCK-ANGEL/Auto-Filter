@@ -4,9 +4,9 @@ from info import DATABASE_NAME,DATABASE_NAMEE, DATABASE_URI,DATABASE_URII, IMDB,
 
 class Database:
     
-    def __init__(self, uri, database_name,urii, database_namee):
+    def __init__(self, uri, database_name):
         self._client = motor.motor_asyncio.AsyncIOMotorClient(uri)
-        self.db = self._client[database_name,database_namee]
+        self.db = self._client[database_name]
         self.col = self.db.users
         self.grp = self.db.groups
 
@@ -151,4 +151,4 @@ class Database:
         return (await self.db.command("dbstats"))['dataSize']
 
 
-db = Database(DATABASE_URI,DATABASE_URII, DATABASE_NAME,DATABASE_NAMEE)
+db = Database(DATABASE_URI,DATABASE_NAME,)
