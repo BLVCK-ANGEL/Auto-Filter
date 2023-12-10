@@ -1,12 +1,12 @@
 # https://github.com/odysseusmax/animated-lamp/blob/master/bot/database/database.py
 import motor.motor_asyncio
-from info import DATABASE_NAME,DATABASE_NAME2, DATABASE_URI,DATABASE_URI2, IMDB, IMDB_TEMPLATE, MELCOW_NEW_USERS, P_TTI_SHOW_OFF, SINGLE_BUTTON, SPELL_CHECK_REPLY, PROTECT_CONTENT, AUTO_DELETE, MAX_BTN, AUTO_FFILTER, SHORTLINK_API, SHORTLINK_URL, IS_SHORTLINK, TUTORIAL, IS_TUTORIAL
+from info import DATABASE_NAME,DATABASE_NAMEE, DATABASE_URI,DATABASE_URII, IMDB, IMDB_TEMPLATE, MELCOW_NEW_USERS, P_TTI_SHOW_OFF, SINGLE_BUTTON, SPELL_CHECK_REPLY, PROTECT_CONTENT, AUTO_DELETE, MAX_BTN, AUTO_FFILTER, SHORTLINK_API, SHORTLINK_URL, IS_SHORTLINK, TUTORIAL, IS_TUTORIAL
 
 class Database:
     
-    def __init__(self, uri, database_name,uri2, database_name2):
+    def __init__(self, uri, database_name,urii, database_namee):
         self._client = motor.motor_asyncio.AsyncIOMotorClient(uri)
-        self.db = self._client[database_name]
+        self.db = self._client[database_name,database_namee]
         self.col = self.db.users
         self.grp = self.db.groups
 
@@ -151,4 +151,4 @@ class Database:
         return (await self.db.command("dbstats"))['dataSize']
 
 
-db = Database(DATABASE_URI,DATABASE_URI2, DATABASE_NAME,DATABASE_NAME2)
+db = Database(DATABASE_URI,DATABASE_URII, DATABASE_NAME,DATABASE_NAMEE)
