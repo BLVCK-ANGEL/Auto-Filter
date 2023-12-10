@@ -14,8 +14,8 @@ logger = logging.getLogger(__name__)
 logger.setLevel(logging.INFO)
 
 
-client = AsyncIOMotorClient(DATABASE_URI,DATABASE_URII)
-db = client[DATABASE_NAME,DATABASE_NAMEE]
+client = AsyncIOMotorClient(DATABASE_URI)
+db = client[DATABASE_NAME]
 instance = Instance.from_db(db)
 
 @instance.register
