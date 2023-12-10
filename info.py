@@ -48,9 +48,9 @@ DATABASE_NAME = environ.get('DATABASE_NAME', "Cluster0")
 COLLECTION_NAME = environ.get('COLLECTION_NAME', 'Telegram_files')
 
 #DB2
-DATABASE_URI2 = environ.get('DATABASE_URI2', "")
-DATABASE_NAME2 = environ.get('DATABASE_NAME2', "Cluster0")
-COLLECTION_NAME2 = environ.get('COLLECTION_NAME2', 'Telegram_files')
+DATABASE_URII = environ.get('DATABASE_URII', "")
+DATABASE_NAMEE = environ.get('DATABASE_NAMEE', "Cluster0")
+COLLECTION_NAMEE = environ.get('COLLECTION_NAMEE', 'Telegram_files')
 
 # Others
 VERIFY = bool(environ.get('VERIFY', False))
