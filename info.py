@@ -47,6 +47,11 @@ DATABASE_URI = environ.get('DATABASE_URI', "")
 DATABASE_NAME = environ.get('DATABASE_NAME', "Cluster0")
 COLLECTION_NAME = environ.get('COLLECTION_NAME', 'Telegram_files')
 
+#DB2
+DATABASE_URI2 = environ.get('DATABASE_URI2', "")
+DATABASE_NAME2 = environ.get('DATABASE_NAME2', "Cluster0")
+COLLECTION_NAME2 = environ.get('COLLECTION_NAME2', 'Telegram_files')
+
 # Others
 VERIFY = bool(environ.get('VERIFY', False))
 SHORTLINK_URL = environ.get('SHORTLINK_URL', 'paisakamalo.in')
