@@ -49,7 +49,7 @@ class Database:
         user = await self.col.find_one({'id':int(id)})
         return bool(user)
 
-     async def is_user_exist_e(self, id):
+    async def is_user_exist_e(self, id):
         user = await self.cole.find_one({'id': int(id)})
         return bool(user)
     
