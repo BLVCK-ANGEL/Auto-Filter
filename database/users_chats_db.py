@@ -11,6 +11,12 @@ class Database:
         self.grp = self.db.groups
 
 
+        self._cliente = motor.motor_asyncio.AsyncIOMotorClient(uri)
+        self.dbe = self._cliente[database_namee]
+        self.cole = self.dbe.users
+        self.grpe = self.dbe.groups
+
+
     def new_user(self, id, name):
         return dict(
             id = id,
@@ -31,7 +37,10 @@ class Database:
                 reason="",
             ),
         )
-    
+    async def add_user_e(self, id, name):
+        user = self.new_user(id, name)
+        await self.cole.insert_one(user)
+        
     async def add_user(self, id, name):
         user = self.new_user(id, name)
         await self.col.insert_one(user)
@@ -39,11 +48,19 @@ class Database:
     async def is_user_exist(self, id):
         user = await self.col.find_one({'id':int(id)})
         return bool(user)
+
+     async def is_user_exist_e(self, id):
+        user = await self.cole.find_one({'id': int(id)})
+        return bool(user)
     
     async def total_users_count(self):
         count = await self.col.count_documents({})
         return count
-    
+
+    async def total_users_count_e(self):
+        count = await self.cole.count_documents({})
+        return count
+        
     async def remove_ban(self, id):
         ban_status = dict(
             is_banned=False,
@@ -150,5 +167,8 @@ class Database:
     async def get_db_size(self):
         return (await self.db.command("dbstats"))['dataSize']
 
+    async def get_db_size_e(self):
+        return (await self.dbe.command("dbstats"))['dataSize']
 
-db = Database(DATABASE_URI,DATABASE_NAME)
+
+db = Database(DATABASE_URI,DATABASE_NAME,DATABASE_NAMEE)
