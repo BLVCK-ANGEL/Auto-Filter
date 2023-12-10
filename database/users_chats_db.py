@@ -4,17 +4,21 @@ from info import DATABASE_NAME,DATABASE_NAMEE, DATABASE_URI,DATABASE_URII, IMDB,
 
 class Database:
     
-    def __init__(self, uri, database_name):
+    #def __init__(self, uri, database_name):
+    #    self._client = motor.motor_asyncio.AsyncIOMotorClient(uri)
+    #    self.db = self._client[database_name]
+    #    self.col = self.db.users
+    #    self.grp = self.db.groups
+
+    def __init__(self, uri, *database_names):
         self._client = motor.motor_asyncio.AsyncIOMotorClient(uri)
-        self.db = self._client[database_name]
-        self.col = self.db.users
-        self.grp = self.db.groups
+        self.dbs = [self._client[db] for db in database_names]
+        self.col = self.dbs[0].users
+        self.grp = self.dbs[0].groups
 
-
-        self._cliente = motor.motor_asyncio.AsyncIOMotorClient(uri)
-        self.dbe = self._cliente[database_namee]
-        self.cole = self.dbe.users
-        self.grpe = self.dbe.groups
+        self.cole = self.dbs[1].users
+        self.grpe = self.dbs[1].groups
+        
 
 
     def new_user(self, id, name):
