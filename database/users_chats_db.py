@@ -4,7 +4,7 @@ from info import DATABASE_NAME,DATABASE_NAME2, DATABASE_URI,DATABASE_URI2, IMDB,
 
 class Database:
     
-    def __init__(self, uri, database_name):
+    def __init__(self, uri, database_name,uri2, database_name2):
         self._client = motor.motor_asyncio.AsyncIOMotorClient(uri)
         self.db = self._client[database_name]
         self.col = self.db.users
