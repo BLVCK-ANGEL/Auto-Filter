@@ -4,20 +4,13 @@ from info import DATABASE_NAME,DATABASE_NAMEE, DATABASE_URI,DATABASE_URII, IMDB,
 
 class Database:
     
-    #def __init__(self, uri, database_name):
-    #    self._client = motor.motor_asyncio.AsyncIOMotorClient(uri)
-    #    self.db = self._client[database_name]
-    #    self.col = self.db.users
-    #    self.grp = self.db.groups
-
-    def __init__(self, uri, *database_names):
+    def __init__(self, uri, database_name):
         self._client = motor.motor_asyncio.AsyncIOMotorClient(uri)
-        self.dbs = [self._client[db] for db in database_names]
-        self.col = self.dbs[0].users
-        self.grp = self.dbs[0].groups
+        self.db = self._client[database_name]
+        self.col = self.db.users
+        self.grp = self.db.groups
 
-        self.cole = self.dbs[1].users
-        self.grpe = self.dbs[1].groups
+    
         
 
 
@@ -41,9 +34,7 @@ class Database:
                 reason="",
             ),
         )
-    async def add_user_e(self, id, name):
-        user = self.new_user(id, name)
-        await self.cole.insert_one(user)
+    
         
     async def add_user(self, id, name):
         user = self.new_user(id, name)
@@ -53,17 +44,13 @@ class Database:
         user = await self.col.find_one({'id':int(id)})
         return bool(user)
 
-    async def is_user_exist_e(self, id):
-        user = await self.cole.find_one({'id': int(id)})
-        return bool(user)
+    
     
     async def total_users_count(self):
         count = await self.col.count_documents({})
         return count
 
-    async def total_users_count_e(self):
-        count = await self.cole.count_documents({})
-        return count
+    
         
     async def remove_ban(self, id):
         ban_status = dict(
@@ -171,8 +158,7 @@ class Database:
     async def get_db_size(self):
         return (await self.db.command("dbstats"))['dataSize']
 
-    async def get_db_size_e(self):
-        return (await self.dbe.command("dbstats"))['dataSize']
+    
 
 
-db = Database(DATABASE_URI,DATABASE_NAME,DATABASE_NAMEE)
+db = Database(DATABASE_URI,DATABASE_NAME)
